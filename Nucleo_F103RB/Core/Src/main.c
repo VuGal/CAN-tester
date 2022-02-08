@@ -53,13 +53,13 @@ CAN_TxHeaderTypeDef TxHeaderEngineCU = {
 	.ExtId = 0x1,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef EngineCUFilterConfig = {
 	.FilterIdHigh = 0x1 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 0,
@@ -68,23 +68,24 @@ CAN_FilterTypeDef EngineCUFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t EngineCUTxData[4] = {0, 1, 1, 5};
+
+uint8_t EngineCUTxData[8] = {0x00, 0x00, 0x01, 0x15, 0x01, 0x68, 0x05, 0x24};
 
 // ----------------------------------------------
 
 // Transmission Control Unit structures
 CAN_TxHeaderTypeDef TxHeaderTransmissionCU = {
-	.StdId = 0x45,
-	.ExtId = 0x45,
+	.StdId = 0x25,
+	.ExtId = 0x25,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef TransmissionCUFilterConfig = {
-	.FilterIdHigh = 0x45 << 5,
+	.FilterIdHigh = 0x25 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 1,
@@ -93,7 +94,8 @@ CAN_FilterTypeDef TransmissionCUFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t TransmissionCUTxData[4] = {0, 7, 3, 1};
+
+uint8_t TransmissionCUTxData[14] = {0x00, 0x00, 0x07, 0x31, 0x07, 0x32, 0x07, 0x33, 0x07, 0x34, 0x07, 0x35, 0x07, 0x36};
 
 // ----------------------------------------------
 
@@ -103,13 +105,13 @@ CAN_TxHeaderTypeDef TxHeaderSpeedCU = {
 	.ExtId = 0x10,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef SpeedCUFilterConfig = {
 	.FilterIdHigh = 0x10 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 2,
@@ -118,7 +120,8 @@ CAN_FilterTypeDef SpeedCUFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t SpeedCUTxData[4] = {0, 5, 6, 5};
+
+uint8_t SpeedCUTxData[8] = {0x00, 0x00, 0x05, 0x65, 0x05, 0x66, 0x05, 0x74};
 
 // ----------------------------------------------
 
@@ -128,13 +131,13 @@ CAN_TxHeaderTypeDef TxHeaderBrakeCU = {
 	.ExtId = 0x5,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef BrakeCUFilterConfig = {
 	.FilterIdHigh = 0x5 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 3,
@@ -143,7 +146,8 @@ CAN_FilterTypeDef BrakeCUFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t BrakeCUTxData[4] = {0, 5, 5, 7};
+
+uint8_t BrakeCUTxData[6] = {0x00, 0x00, 0x05, 0x57, 0x05, 0x58};
 
 // ----------------------------------------------
 
@@ -153,13 +157,13 @@ CAN_TxHeaderTypeDef TxHeaderDoorCU = {
 	.ExtId = 0x134,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef DoorCUFilterConfig = {
 	.FilterIdHigh = 0x134 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 4,
@@ -168,7 +172,8 @@ CAN_FilterTypeDef DoorCUFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t DoorCUTxData[4] = {0, 2, 1, 6};
+
+uint8_t DoorCUTxData[14] = {0x00, 0x00, 0x02, 0x06, 0x02, 0x07, 0x02, 0x15, 0x02, 0x16, 0x02, 0x22, 0x02, 0x23};
 
 // ----------------------------------------------
 
@@ -178,13 +183,13 @@ CAN_TxHeaderTypeDef TxHeaderSeatCU = {
 	.ExtId = 0x176,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef SeatCUFilterConfig = {
 	.FilterIdHigh = 0x176 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 5,
@@ -193,7 +198,9 @@ CAN_FilterTypeDef SeatCUFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t SeatCUTxData[4] = {0, 2, 0, 8};
+
+uint8_t SeatCUTxData[6] = {0x00, 0x00, 0x02, 0x08, 0x02, 0x09};
+
 
 // ----------------------------------------------
 
@@ -203,13 +210,13 @@ CAN_TxHeaderTypeDef TxHeaderHMI = {
 	.ExtId = 0x200,
 	.RTR = CAN_RTR_DATA,
 	.IDE = CAN_ID_STD,
-	.DLC = 4,
+	.DLC = 2,
 	.TransmitGlobalTime = DISABLE
 };
 CAN_FilterTypeDef HMIFilterConfig = {
 	.FilterIdHigh = 0x200 << 5,
 	.FilterIdLow = 0x0000,
-	.FilterMaskIdHigh = 0xFFFF,
+	.FilterMaskIdHigh = 0xFFE0,
 	.FilterMaskIdLow = 0x0000,
 	.FilterFIFOAssignment = CAN_FILTER_FIFO0,
 	.FilterBank = 6,
@@ -218,21 +225,27 @@ CAN_FilterTypeDef HMIFilterConfig = {
 	.FilterActivation = CAN_FILTER_ENABLE,
 	.SlaveStartFilterBank = 0
 };
-uint8_t HMICUTxData[4] = {0, 1, 9, 6};
+
+uint8_t HMICUTxData[8] = {0x00, 0x00, 0x01, 0x96, 0x01, 0x58, 0x01, 0x62};
 
 // ----------------------------------------------
 
 CAN_RxHeaderTypeDef RxHeader;
 uint8_t RxData[4] = {0, 0, 0, 0};
+
 uint32_t TxMailbox;
 
-uint8_t engineCUFlag = 0;
-uint8_t transmissionCUFlag = 0;
-uint8_t speedCUFlag = 0;
-uint8_t brakeCUFlag = 0;
-uint8_t doorCUFlag = 0;
-uint8_t seatCUFlag = 0;
-uint8_t HMIFlag = 0;
+uint8_t CurrentEngineCUPacket = 0;
+uint8_t CurrentTransmissionCUPacket = 0;
+uint8_t CurrentSpeedCUPacket = 0;
+uint8_t CurrentBrakeCUPacket = 0;
+uint8_t CurrentDoorCUPacket = 0;
+uint8_t CurrentSeatCUPacket = 0;
+uint8_t CurrentHMIPacket = 0;
+
+uint8_t DoorCURequestFlag = 0;
+uint8_t SeatCURequestFlag = 0;
+uint8_t HMIRequestFlag = 0;
 
 /* USER CODE END PV */
 
@@ -287,7 +300,7 @@ int main(void)
 
 	// "SNIFFER" MODE TEST
 
-//	// apply CAN filter configuration
+	// apply CAN filter configuration
 	if ((HAL_CAN_ConfigFilter(&hcan, &EngineCUFilterConfig) != HAL_OK) ||
 		(HAL_CAN_ConfigFilter(&hcan, &TransmissionCUFilterConfig) != HAL_OK) ||
 		(HAL_CAN_ConfigFilter(&hcan, &SpeedCUFilterConfig) != HAL_OK) ||
@@ -319,17 +332,53 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
+	++CurrentEngineCUPacket;
+	++CurrentTransmissionCUPacket;
+	++CurrentSpeedCUPacket;
+	++CurrentBrakeCUPacket;
+	++CurrentDoorCUPacket;
+	++CurrentSeatCUPacket;
+	++CurrentHMIPacket;
+
+	if ( CurrentEngineCUPacket % ( sizeof(EngineCUTxData)/(2*sizeof(EngineCUTxData[0])) ) == 0 ) {
+		CurrentEngineCUPacket = 0;
+	}
+
+	if ( CurrentTransmissionCUPacket % ( sizeof(TransmissionCUTxData)/(2*sizeof(TransmissionCUTxData[0])) ) == 0 ) {
+		CurrentTransmissionCUPacket = 0;
+	}
+
+	if ( CurrentSpeedCUPacket % ( sizeof(SpeedCUTxData)/(2*sizeof(SpeedCUTxData[0])) ) == 0 ) {
+		CurrentSpeedCUPacket = 0;
+	}
+
+	if ( CurrentBrakeCUPacket % ( sizeof(BrakeCUTxData)/(2*sizeof(BrakeCUTxData[0])) ) == 0 ) {
+		CurrentBrakeCUPacket = 0;
+	}
+
+	if ( CurrentDoorCUPacket % ( sizeof(DoorCUTxData)/(2*sizeof(DoorCUTxData[0])) ) == 0 ) {
+		CurrentDoorCUPacket = 0;
+	}
+
+	if ( CurrentSeatCUPacket % ( sizeof(SeatCUTxData)/(2*sizeof(SeatCUTxData[0])) ) == 0 ) {
+		CurrentSeatCUPacket = 0;
+	}
+
+	if ( CurrentHMIPacket % ( sizeof(HMICUTxData)/(2*sizeof(HMICUTxData[0])) ) == 0 ) {
+		CurrentHMIPacket = 0;
+	}
+
 	// "SNIFFER" MODE TEST
     //
     // These ECUs broadcast their status regularly. Raspberry Pi will sniff these frames from the bus.
 
-	HAL_CAN_AddTxMessage(&hcan, &TxHeaderEngineCU, EngineCUTxData, &TxMailbox);
+	HAL_CAN_AddTxMessage(&hcan, &TxHeaderEngineCU, EngineCUTxData + (CurrentEngineCUPacket * 2), &TxMailbox);
 	HAL_Delay(100);
-	HAL_CAN_AddTxMessage(&hcan, &TxHeaderTransmissionCU, TransmissionCUTxData, &TxMailbox);
+	HAL_CAN_AddTxMessage(&hcan, &TxHeaderTransmissionCU, TransmissionCUTxData + (CurrentTransmissionCUPacket * 2), &TxMailbox);
 	HAL_Delay(100);
-	HAL_CAN_AddTxMessage(&hcan, &TxHeaderSpeedCU, SpeedCUTxData, &TxMailbox);
+	HAL_CAN_AddTxMessage(&hcan, &TxHeaderSpeedCU, SpeedCUTxData + (CurrentSpeedCUPacket * 2), &TxMailbox);
 	HAL_Delay(100);
-	HAL_CAN_AddTxMessage(&hcan, &TxHeaderBrakeCU, BrakeCUTxData, &TxMailbox);
+	HAL_CAN_AddTxMessage(&hcan, &TxHeaderBrakeCU, BrakeCUTxData + (CurrentBrakeCUPacket * 2), &TxMailbox);
 	HAL_Delay(100);
 
 
@@ -338,17 +387,20 @@ int main(void)
 	// These ECUs require a request from the other node to transmit their status.
 	// It's achieved by sending a RTR frame with a proper ID from Raspberry Pi.
 
-	if (doorCUFlag == 1) {
-		HAL_CAN_AddTxMessage(&hcan, &TxHeaderDoorCU, DoorCUTxData, &TxMailbox);
-		doorCUFlag = 0;
+	if (DoorCURequestFlag == 1) {
+		HAL_CAN_AddTxMessage(&hcan, &TxHeaderDoorCU, DoorCUTxData + (CurrentDoorCUPacket * 2), &TxMailbox);
+		DoorCURequestFlag = 0;
+		HAL_Delay(100);
 	}
-	if (seatCUFlag == 1) {
-		HAL_CAN_AddTxMessage(&hcan, &TxHeaderSeatCU, SeatCUTxData, &TxMailbox);
-		seatCUFlag = 0;
+	if (SeatCURequestFlag == 1) {
+		HAL_CAN_AddTxMessage(&hcan, &TxHeaderSeatCU, SeatCUTxData + (CurrentSeatCUPacket * 2), &TxMailbox);
+		SeatCURequestFlag = 0;
+		HAL_Delay(100);
 	}
-	if (HMIFlag == 1) {
-		HAL_CAN_AddTxMessage(&hcan, &TxHeaderHMI, HMICUTxData, &TxMailbox);
-		HMIFlag = 0;
+	if (HMIRequestFlag == 1) {
+		HAL_CAN_AddTxMessage(&hcan, &TxHeaderHMI, HMICUTxData + (CurrentHMIPacket * 2), &TxMailbox);
+		HMIRequestFlag = 0;
+		HAL_Delay(100);
 	}
 
   }
@@ -506,9 +558,18 @@ static void MX_GPIO_Init(void)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 	HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader, RxData);
-	if (RxHeader.StdId == 0x134 && RxHeader.RTR == CAN_RTR_REMOTE) doorCUFlag = 1;
-	if (RxHeader.StdId == 0x176 && RxHeader.RTR == CAN_RTR_REMOTE) seatCUFlag = 1;
-	if (RxHeader.StdId == 0x200 && RxHeader.RTR == CAN_RTR_REMOTE) HMIFlag = 1;
+
+	if (RxHeader.StdId == 0x134 && RxHeader.RTR == CAN_RTR_REMOTE) {
+		DoorCURequestFlag = 1;
+	}
+
+	if (RxHeader.StdId == 0x176 && RxHeader.RTR == CAN_RTR_REMOTE) {
+		SeatCURequestFlag = 1;
+	}
+
+	if (RxHeader.StdId == 0x200 && RxHeader.RTR == CAN_RTR_REMOTE) {
+		HMIRequestFlag = 1;
+	}
 }
 
 /* USER CODE END 4 */
