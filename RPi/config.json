@@ -1,0 +1,76 @@
+{
+	"SniffMode":
+	{
+		"0x1":
+		{
+			"Name": "Engine Control Unit",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0115": "Engine Coolant Temperature Circuit Malfunction",
+			"0x0168": "Engine Fuel Temperature Too High",
+			"0x0524": "Engine Oil Pressure Too Low"
+		},
+		"0x25":
+		{
+			"Name": "Transmission Control Unit",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0731": "Gear 1 Incorrect Ratio",
+			"0x0732": "Gear 2 Incorrect Ratio",
+			"0x0733": "Gear 3 Incorrect Ratio",
+			"0x0734": "Gear 4 Incorrect Ratio",
+			"0x0735": "Gear 5 Incorrect Ratio",
+			"0x0736": "Reverse Incorrect Ratio"
+		},
+		"0x10":
+		{
+			"Name": "Speed Control Unit",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0565": "Cruise Control On Signal Malfunction",
+			"0x0566": "Cruise Control Off Signal Malfunction",
+			"0x0574": "Cruise Control System - Vehicle Speed Too High"
+		},
+		"0x5":
+		{
+			"Name": "Brake Control Unit",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0557": "Brake Booster Pressure Sensor Circuit Low Input",
+			"0x0558": "Brake Booster Pressure Sensor Circuit High Input"
+		}
+	},
+	"NodeMode":
+	{
+		"0x134":
+		{
+			"Name": "Door Control Unit",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0206": "Lost Communication With Folding Top Control Module",
+			"0x0207": "Lost Communication With Movable Roof Control Module",
+			"0x0215": "Lost Communication With “Door Switch A”",
+			"0x0216": "Lost Communication With “Door Switch B”",
+			"0x0222": "Lost Communication With “Door Window Motor A”",
+			"0x0223": "Lost Communication With “Door Window Motor B”"
+		},
+		"0x176":
+		{
+			"Name": "Seat Control Unit",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0208": "Lost Communication With “Seat Control Module A”",
+			"0x0209": "Lost Communication With “Seat Control Module B”"
+		},
+		"0x200":
+		{
+			"Name": "Human-Machine Interface",
+			"No Error Code": "0x0000",
+			"0x0000": "Everything OK",
+			"0x0196": "Lost Communication With Rear Seat Entertainment Control Module",
+			"0x0158": "Lost Communication With Head Up Display",
+			"0x0162": "Lost Communication With Navigation Display Module"
+		}
+	}
+}			
+         
