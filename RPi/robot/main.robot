@@ -1,4 +1,5 @@
 *** Settings ***
+
 Documentation    CAN Project
 Library    OperatingSystem
 Library    Dialogs
@@ -6,12 +7,11 @@ Library    Collections
 Library    python/Keywords.py
 
 
-
-
 *** Variables ***
 
 ${TIMEOUT}    30
 ${CONFIG_PATH}    /home/pi/CAN_Tester/config.json
+
 
 *** Test Cases ***
 
@@ -41,7 +41,9 @@ Deinitialize CAN
     [Tags]    required
     Deinitialize CAN
 
+
 *** Keywords ***
+
 Test Sniffing Config Mode Keyword
     ${messages}    Collect Messages    ${CanBus}    ${30}
     ${data}    Read Json File    ${CONFIG_PATH}
@@ -71,5 +73,3 @@ Test Node Full Scan Mode Keyword
     FOR    ${ID}    IN    @{messages_keys}
         Run Keyword And Continue On Failure    Test Node Full Scan Mode Label Code Error    ${ID}    ${messages}
     END
-
-
