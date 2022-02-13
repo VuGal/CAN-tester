@@ -45,7 +45,7 @@ def send_file(source_path, target_path):
 
 if __name__ == '__main__':
     update_date()
-    parent_dir = '/home/pi/CAN_Tester'
+    parent_dir = os.getcwd()
     directory = date
     path_of_logs = os.path.join(parent_dir, directory)
     mode = 0o755
