@@ -272,7 +272,7 @@ class ErrorCode(ErrorInterface):
 
 class Keywords:
     def __init__(self):
-        self.bitRates = [500000]
+        self.bitRates = [125000, 250000, 500000, 1000000]
         self.can0 = None
         self.bitRate = None
         self.isExtendedId = None

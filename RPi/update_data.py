@@ -30,10 +30,6 @@ class MySFTPClient(paramiko.SFTPClient):
             else:
                 raise
 
-def log(message):
-    with open('/home/pi/RobotWorkspaceSISK/log_update_data.txt', 'a') as file:
-        file.write(message+'\n')
-
 def update_date():
     global date
     date = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
